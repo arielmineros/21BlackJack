@@ -1,0 +1,17 @@
+body{
+    background-color: #2f034b;
+    color: aliceblue;
+}
+.carta{
+    position: relative;
+    width: 125px;
+    left: 100px;
+    margin-left: -50px;
+}
+#jugador-cartas, #computadora-cartas{
+    height: 200px;
+}
+.nombre{
+    text-align: center;
+    background-color: black;
+}
