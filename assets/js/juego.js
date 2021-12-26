@@ -1,16 +1,16 @@
 (() => {
     let deck = [];
-    const tipos = ['C', 'D', 'H', 'S'];
-    const cartas = ['A', 'Q', 'J', 'K'];
+    const tipos = ['C', 'D', 'H', 'S'], 
+          cartas = ['A', 'Q', 'J', 'K'];
     var puntosJugador = 0,
         puntosComputadora = 0;
 
     //Referencias del HTML
     //Etiquetas small donde se ven los puntos
-    const smalls = document.querySelectorAll('small');
-    //div id jugador-cartas
-    const cartasDivJugador = document.querySelector('#jugador-cartas');
-    const cartasDivComputadora = document.querySelector('#computadora-cartas');
+    const smalls = document.querySelectorAll('small'), 
+        //div id jugador-cartas
+        cartasDivJugador = document.querySelector('#jugador-cartas'),
+        cartasDivComputadora = document.querySelector('#computadora-cartas');
 
     //Creando el mazo
     const createDeck = () => {
@@ -59,8 +59,7 @@
         if (deck.length === 0) {
             throw 'No hay cartas en el deck';
         }
-        const ultima = deck.pop();
-        return ultima;
+        return deck.pop();
     }
     //Obteniendo el valor de la carta
     const valorCarta = (ultima) => {
@@ -106,6 +105,9 @@
         turnoComputadora(puntosJugador);
     });
 
+    const startGame=()=>{
+        createDeck();
+    }
     //Botón Nuevo Juego
     btnNuevo.addEventListener('click', () => {
         puntosJugador = 0;
@@ -116,6 +118,6 @@
         cartasDivJugador.innerHTML = '';
         btnDetener.disabled = false;
         btnPedir.disabled = false;
-        createDeck();
+        startGame();
     });
 })();
