@@ -29,12 +29,14 @@
     }
     createDeck();
 
+    
     //Turno de la computadora
     const turnoComputadora = (puntosMinimos) => {
         while (puntosComputadora <= puntosMinimos) {
             const carta = pedirCarta();
             puntosComputadora += valorCarta(carta);
             smalls[1].innerText = puntosComputadora;
+
             const imgCarta = document.createElement('img');
             imgCarta.src = `assets/cartas/${carta}.png`;
             imgCarta.classList.add('carta');
@@ -84,7 +86,7 @@
         imgCarta.src = `assets/cartas/${carta}.png`;
         //Agregamos la imagen de la carta a la clase 'carta'
         imgCarta.classList.add('carta');
-        //Insertamos la imagen dentro del div
+        //Insertamos la imagen dentro del divx|
         cartasDivJugador.append(imgCarta);
         if (puntosJugador > 21) {
             turnoComputadora(puntosJugador);
